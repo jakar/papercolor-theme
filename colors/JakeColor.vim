@@ -631,8 +631,149 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 
   call s:HL("cOctalZero", s:foreground, "", "bold")
 
+  "
+  " Rust Highlighting
+  "
+  """ Keyword - s:blue
+  call s:HL("rustTypedef", s:wine, "", "")
 
+  call s:HL("rustStructure", s:wine, "", "")
+  call s:HL("rustUnion", s:wine, "", "")
+
+  call s:HL("rustKeyword", s:pink, "", "")
+  call s:HL("rustPubScopeCrate", s:blue, "", "bold")  " match self and super
+  call s:HL("rustExternCrate", s:pink, "", "")  " match rustKeyword
+  call s:HL("rustDynKeyword", s:green, "", "")
+  call s:HL("rustExistential", s:green, "", "")
+  call s:HL("rustSuper", s:blue, "", "bold")
+  call s:HL("rustAsync", s:red, "", "")
+  call s:HL("rustAwait", s:foreground, "", "")
+  call s:HL("rustAsmDirSpec", s:foreground, "", "")
+  call s:HL("rustAsmSym", s:foreground, "", "")
+  call s:HL("rustAsmOptions", s:foreground, "", "")
+
+  """ Conditional - s:purple, bold
+  call s:HL("rustRepeat", s:purple, "", "bold")
+  call s:HL("rustConditional", s:purple, "", "bold")
+
+  """ Exception - s:red
+  call s:HL("rustUnsafeKeyword", s:red, "", "bold")
+
+  """ Macro - s:blue
+  call s:HL("rustMacro", s:blue, "", "")
+  call s:HL("rustMacroRepeatDelimiters", s:blue, "", "")
+
+  """ Define - s:blue
+  call s:HL("rustMacroVariable", s:aqua, "", "")
+
+  """ StorageClass - s:navy, bold
+  call s:HL("rustSigil", s:green, "", "")
+  call s:HL("rustDefault", s:wine, "", "")
+  call s:HL("rustStorage", s:green, "", "")
+
+  """ PreCondit - s:aqua
+  call s:HL("rustAssert", s:blue, "", "")
+  call s:HL("rustPanic", s:blue, "", "")
+
+  """ PreProc - s:blue
+  call s:HL("rustDerive", s:purple, "", "")  " match rustAttribute
+
+  call s:HL("rustAttribute", s:purple, "", "")
+  call s:HL("rustAsmOptionsKey", s:aqua, "", "")
+
+  """ Label - s:blue
+  call s:HL("rustLabel", s:orange, "", "bold")  " match rustLifetime
+
+  """ Identifier - s:navy
+  call s:HL("rustIdentifier", s:aqua, "", "bold")
+  call s:HL("rustIdentifierPrime", s:aqua, "", "bold")
+  call s:HL("rustCapsIdent", s:foreground, "", "")
+
+  """ Include - s:red
+  call s:HL("rustModPath", s:foreground, "", "")
+
+  """ Function - s:foreground
+  call s:HL("rustFunction", s:foreground, "", "")
+  call s:HL("rustFuncName", s:aqua, "", "bold")
+  call s:HL("rustFuncCall", s:foreground, "", "")
+
+  """ Error - s:foreground, s:error
+  call s:HL("rustEscapeError", s:foreground, s:error, "")
+  call s:HL("rustReservedKeyword", s:foreground, s:error, "")
+  call s:HL("rustCommentLineDocError", s:foreground, s:error, "")
+  call s:HL("rustCommentBlockDocError", s:foreground, s:error, "")
+  call s:HL("rustObsoleteStorage", s:foreground, s:error, "")
+  call s:HL("rustObsoleteExternMod", s:foreground, s:error, "")
+
+  call s:HL("rustCharacterInvalid", s:foreground, s:error, "")
+  call s:HL("rustCharacterInvalidUnicode", s:foreground, s:error, "")
+
+  """ String - s:olive
+  call s:HL("rustString", s:olive, "", "")
+  call s:HL("rustStringDelimiter", s:olive, "", "")
+
+  """ Character - s:olive
+  call s:HL("rustCharacter", s:olive, "", "")
+
+  """ Special - s:olive, bold
+  call s:HL("rustStringContinuation", s:olive, "", "bold")
+  call s:HL("rustLifetime", s:orange, "", "bold")  " match rustLabel
+  call s:HL("rustQuestionMark", s:blue, "", "")
+
+  call s:HL("rustEscape", s:olive, "", "bold")
+  call s:HL("rustEscapeUnicode", s:olive, "", "bold")
+
+  """ Number - s:orange
+  call s:HL("rustNumber", s:orange, "", "")
+  call s:HL("rustDecNumber", s:orange, "", "")
+  call s:HL("rustHexNumber", s:orange, "", "")
+  call s:HL("rustOctNumber", s:orange, "", "")
+  call s:HL("rustBinNumber", s:orange, "", "")
+
+  """ Float - s:orange
+  call s:HL("rustFloat", s:orange, "", "")
+
+  """ Constant - s:orange
+  call s:HL("rustConstant", s:foreground, "", "")
+  call s:HL("rustEnumVariant", s:foreground, "", "")
+  call s:HL("rustSelf", s:blue, "", "bold")
+
+  """ Boolean - s:green, bold
+  call s:HL("rustBoolean", s:orange, "", "")
+
+  """ Type - s:pink, bold
+  call s:HL("rustType", s:navy, "", "")
+  call s:HL("rustTrait", s:foreground, "", "")
+  call s:HL("rustDeriveTrait", s:purple, "", "")  " match rustDerive
+  call s:HL("rustEnum", s:foreground, "", "")
+
+  """ Operator - s:aqua, none
+  call s:HL("rustOperator", s:blue, "", "")
+  call s:HL("rustArrowCharacter", s:blue, "", "")
+
+  """ Delimiter - s:aqua
+  call s:HL("rustPubScopeDelim", s:pink, "", "")  " match rustKeyword
+  call s:HL("rustModPathSep", s:foreground, "", "")
+
+  """ Comment - s:comment
+  call s:HL("rustShebang", s:comment, "", "bold")
+
+  call s:HL("rustCommentLine", s:comment, "", "")
+  call s:HL("rustCommentBlock", s:comment, "", "")
+
+  """ SpecialComment - s:comment, bold
+  call s:HL("rustCommentLineDoc", s:comment, "", "none")
+  call s:HL("rustCommentLineDocLeader", s:comment, "", "none")
+  call s:HL("rustCommentBlockDoc", s:comment, "", "none")
+  call s:HL("rustCommentBlockDocStar", s:comment, "", "none")
+  call s:HL("rustCommentDocCodeFence", s:comment, "", "none")
+
+  """ Todo - s:comment, s:background, bold
+  call s:HL("rustTodo", s:comment, s:background, "bold")
+
+  "
   " Lex highlighting
+  "
   call s:HL("lexCFunctions", s:foreground, "", "")
   call s:HL("lexAbbrv", s:purple, "", "")
   call s:HL("lexAbbrvRegExp", s:aqua, "", "")
